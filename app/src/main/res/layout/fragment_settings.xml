@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#263238"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/continents"
+        android:textSize="@dimen/settings_label_textsize"
+        android:textColor="@android:color/white"
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/settings_label_padding"
+        />
+
+
+    <GridLayout
+        android:id="@+id/continents_grid_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:columnCount="2"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        >
+
+        <CheckBox
+            android:id="@+id/africaChkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:buttonTint="@color/colorAccent"
+            android:tag="AF"
+            android:paddingTop="@dimen/settings_continents_padding_hor"
+            android:paddingBottom="@dimen/settings_continents_padding_hor"
+            android:paddingStart="@dimen/settings_continents_padding_ver"
+            android:paddingEnd="@dimen/settings_continents_padding_ver"
+            android:text="@string/continent_africa" />
+
+        <CheckBox
+            android:id="@+id/asiaChkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:buttonTint="@color/colorAccent"
+            android:tag="AS"
+            android:paddingTop="@dimen/settings_continents_padding_hor"
+            android:paddingBottom="@dimen/settings_continents_padding_hor"
+            android:paddingStart="@dimen/settings_continents_padding_ver"
+            android:paddingEnd="@dimen/settings_continents_padding_ver"
+            android:text="@string/continent_asia" />
+
+        <CheckBox
+            android:id="@+id/europaChkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:buttonTint="@color/colorAccent"
+            android:tag="EU"
+            android:paddingTop="@dimen/settings_continents_padding_hor"
+            android:paddingBottom="@dimen/settings_continents_padding_hor"
+            android:paddingStart="@dimen/settings_continents_padding_ver"
+            android:paddingEnd="@dimen/settings_continents_padding_ver"
+
+            android:text="@string/continent_europa" />
+
+        <CheckBox
+            android:id="@+id/southAmericaChkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:buttonTint="@color/colorAccent"
+            android:tag="SA"
+            android:paddingTop="@dimen/settings_continents_padding_hor"
+            android:paddingBottom="@dimen/settings_continents_padding_hor"
+            android:paddingStart="@dimen/settings_continents_padding_ver"
+            android:paddingEnd="@dimen/settings_continents_padding_ver"
+
+            android:text="@string/continent_s_america" />
+
+        <CheckBox
+            android:id="@+id/northAmericaChkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:buttonTint="@color/colorAccent"
+            android:tag="US"
+            android:paddingTop="@dimen/settings_continents_padding_hor"
+            android:paddingBottom="@dimen/settings_continents_padding_hor"
+            android:paddingStart="@dimen/settings_continents_padding_ver"
+            android:paddingEnd="@dimen/settings_continents_padding_ver"
+
+            android:text="@string/continent_n_america" />
+
+        <CheckBox
+            android:id="@+id/otherChkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:buttonTint="@color/colorAccent"
+            android:tag="OTHER"
+            android:paddingTop="@dimen/settings_continents_padding_hor"
+            android:paddingBottom="@dimen/settings_continents_padding_hor"
+            android:paddingStart="@dimen/settings_continents_padding_ver"
+            android:paddingEnd="@dimen/settings_continents_padding_ver"
+
+            android:text="@string/continent_other" />
+
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/difficulty"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/settings_label_textsize"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/settings_save_margin_top"
+        android:padding="@dimen/settings_label_padding"
+        />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        >
+
+        <RadioButton
+            android:id="@+id/easy_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diff_easy"
+            android:buttonTint="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:paddingStart="2dp"
+            android:tag="1"
+            />
+
+        <RadioButton
+            android:id="@+id/medium_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diff_medium"
+            android:buttonTint="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:paddingStart="2dp"
+            android:tag="2"
+            />
+
+        <RadioButton
+            android:id="@+id/hard_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diff_hard"
+            android:buttonTint="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:paddingStart="2dp"
+            android:tag="3"
+            />
+
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/settings_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/settings_save_margin_top"
+
+        android:gravity="center"
+        android:text="@string/save"
+        android:textSize="@dimen/settings_save_textsize"
+        android:padding="@dimen/settings_save_padding"
+
+        android:background="#455A64"
+        android:textColor="@android:color/white"
+        />
+
+</LinearLayout>

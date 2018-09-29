@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Map Quiz</string>
+    <string name="title_activity_main">Map Quiz</string>
+
+    <string name="tv_question">Find %s</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_skip_next">Next</string>
+    <string name="toast_correct">Correct!</string>
+    <string name="toast_wrong">Wrong. This is %s</string>
+    <string name="toast_no_continents">You have to pick at least one continent</string>
+
+    <string name="continents">Continents:</string>
+    <string name="continent_africa">Africa</string>
+    <string name="continent_asia">Asia</string>
+    <string name="continent_europa">Europa</string>
+    <string name="continent_s_america">South America</string>
+    <string name="continent_n_america">North America</string>
+    <string name="continent_other">Other</string>
+
+    <string name="difficulty">Difficulty:</string>
+    <string name="diff_easy">Easy</string>
+    <string name="diff_medium">Medium</string>
+    <string name="diff_hard">Hard</string>
+
+    <string name="save">Save</string>
+    <string name="toast_saved">Settings Saved</string>
+    <string name="reset_alert_title">Restart ?</string>
+    <string name="reset_alert_msg">Game settings has benn changed.\nDo you wish to restart?</string>
+
+    <string name="gameover_alert_title">Finished</string>
+    <string name="gameover_alert_msg">You have found %d out of %d countries\nDo you wish to play again?</string>
+
+    <string name="skip_hint">Here it is</string>
+
+    <string name="alert_positive">Yes</string>
+    <string name="alert_negative">No</string>
+   </resources>

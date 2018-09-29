@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.bochenchleba.mapquiz.Main" />
+
+
+
+    <TextView
+        android:id="@+id/question_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+
+        android:text="Find Germany"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="@drawable/tv_background"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:layout_below="@id/question_tv"
+        android:layout_alignEnd="@id/map"
+        android:layout_alignBottom="@id/map"
+        android:layout_margin="16dp"
+        >
+
+        <ImageButton
+            android:id="@+id/settings_imgbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+            android:background="@drawable/ui_background"
+            android:src="@drawable/ic_settings" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/settings_imgbtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="128dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/ui_background"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/zoom_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_zoom"
+
+                />
+
+            <com.bochenchleba.mapquiz.SeekBarRotator
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/zoom_img"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp">
+
+                <SeekBar
+                    android:id="@+id/zoom_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:max="40"
+                    android:padding="8dp"
+                    android:progress="1" />
+            </com.bochenchleba.mapquiz.SeekBarRotator>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@id/map"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"
+
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:text="@string/btn_skip"
+
+        android:visibility="invisible"
+
+        android:background="@drawable/ui_background"
+        />
+
+    <TextView
+        android:id="@+id/tv_attempts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:background="@drawable/ui_background"
+        android:layout_below="@id/question_tv"
+        android:layout_margin="@dimen/main_attempts_margin"
+        android:padding="@dimen/main_attempts_padding"
+        />
+
+
+</RelativeLayout>
+
+

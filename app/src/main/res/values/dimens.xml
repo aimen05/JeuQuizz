@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="settings_label_padding">16dp</dimen>
+    <dimen name="settings_label_textsize">22sp</dimen>
+    <dimen name="settings_continents_padding_hor">8dp</dimen>
+    <dimen name="settings_continents_padding_ver">16dp</dimen>
+    <dimen name="settings_continents_textsize">18sp</dimen>
+    <dimen name="settings_save_margin_top">24dp</dimen>
+    <dimen name="settings_save_textsize">24sp</dimen>
+    <dimen name="settings_save_padding">14dp</dimen>
+
+    <dimen name="main_attempts_margin">18dp</dimen>
+    <dimen name="main_attempts_padding">12dp</dimen>
+
+</resources>
