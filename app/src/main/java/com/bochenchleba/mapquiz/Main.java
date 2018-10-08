@@ -1,13 +1,17 @@
 package com.bochenchleba.mapquiz;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
@@ -148,7 +152,6 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
 
         return new LatLng(0,0);
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
