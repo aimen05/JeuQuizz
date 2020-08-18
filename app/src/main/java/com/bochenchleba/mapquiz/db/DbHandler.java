@@ -74,9 +74,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_COUNTRIES);
-
         onCreate(db);
     }
 
@@ -123,7 +121,6 @@ public class DbHandler extends SQLiteOpenHelper {
         List<String> records = new ArrayList<>();
 
         for (String continent:continents) {
-
             Cursor cursor = db.query(
                     TABLE_COUNTRIES,
                     new String[] { KEY_NAME},
@@ -133,7 +130,6 @@ public class DbHandler extends SQLiteOpenHelper {
             );
 
             if (cursor.moveToFirst()) {
-
                 do {
                     records.add(cursor.getString(0));
                 }
@@ -147,7 +143,6 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     public List<String> getCoordinates (String countryName){
-
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(
@@ -164,8 +159,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
             coordinates.add(cursor.getString(0));
             coordinates.add(cursor.getString(1));
-        }
-        else{
+        } else {
 
             coordinates.add("0");
             coordinates.add("0");

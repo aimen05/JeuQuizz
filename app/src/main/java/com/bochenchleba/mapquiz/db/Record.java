@@ -17,8 +17,7 @@ public class Record {
     }
 
     public Record(int id, String name, String continent, String difficulty, String latitude,
-                  String longitude){
-
+                  String longitude) {
         this.id = id;
         this.name = name;
         this.continent = continent;
@@ -30,7 +29,7 @@ public class Record {
 
 
     public Record(String name, String continent, String difficulty, String latitude,
-                  String longitude){
+                  String longitude) {
 
         this.name = name;
         this.continent = continent;

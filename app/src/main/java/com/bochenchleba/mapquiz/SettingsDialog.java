@@ -23,8 +23,7 @@ import java.util.Set;
  * Created by bochenchleba on 12/03/18.
  */
 
-public class SettingsDialog extends DialogFragment{
-
+public class SettingsDialog extends DialogFragment {
     SharedPreferences prefs;
 
     CheckBox chkAF;
@@ -47,7 +46,7 @@ public class SettingsDialog extends DialogFragment{
     SettingsListener callback;
 
 
-    public SettingsDialog(){
+    public SettingsDialog() {
     }
 
     @Override
@@ -63,8 +62,7 @@ public class SettingsDialog extends DialogFragment{
         return view;
     }
 
-    private void findViews(View view){
-
+    private void findViews(View view) {
         chkAF = view.findViewById(R.id.africaChkBox);
         chkAS = view.findViewById(R.id.asiaChkBox);
         chkEU = view.findViewById(R.id.europaChkBox);
@@ -83,7 +81,7 @@ public class SettingsDialog extends DialogFragment{
         prefs = getActivity().getPreferences(Context.MODE_PRIVATE);
     }
 
-    private void setCurrentSettings(){
+    private void setCurrentSettings() {
 
         defaultContinents = new HashSet<>(Arrays.asList("AF", "AS", "EU", "OTHER", "SA", "US"));
         selectedContinents = prefs.getStringSet(Fields.PREFS_KEY_CONTINENTS, defaultContinents);
@@ -174,6 +172,6 @@ public class SettingsDialog extends DialogFragment{
     };
 
     public interface SettingsListener {
-        void dataSaved ();
+        void dataSaved();
     }
 }
