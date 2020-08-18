@@ -4,7 +4,7 @@ User can choose which continents should be included in the game and select diffi
 
 Play Store link: https://play.google.com/store/apps/details?id=com.bochenchleba.mapquiz
 
-Video presentation: https://youtu.be/lhwaOzNWlww
+Video presentation: https://www.youtube.com/watch?v=VrWZe_1k1sQ
 
 Application is using Google Maps API, which requires internet connection.
 
