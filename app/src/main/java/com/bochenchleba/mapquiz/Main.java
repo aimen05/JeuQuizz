@@ -1,17 +1,13 @@
 package com.bochenchleba.mapquiz;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
@@ -61,7 +57,6 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
 
     List<String> countriesToGuess = new ArrayList<>();
 
-
     private static final String DB_NAME = "database";
 
     private boolean skipped = false;
@@ -70,8 +65,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
     private int correctAttempts;
 
 
-    private void startGame(){
-
+    private void startGame() {
         btnSkip.setOnClickListener(skipClickListener);
 
         countriesToGuess = getListOfRandomCountries();
@@ -83,10 +77,8 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
         nextQuestion();
     }
 
-    private void nextQuestion(){
-
+    private void nextQuestion() {
         totalAttempts++;
-
         if (mistakesCount==0)
             correctAttempts++;
 
@@ -108,7 +100,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
         }
     }
 
-    private List<String> getListOfRandomCountries(){
+    private List<String> getListOfRandomCountries() {
 
         Set<String> defaultContinents = new HashSet<>(Arrays.asList("AF", "AS", "EU", "OTHER", "SA", "US"));
         Set<String> selectedContinents = prefs.getStringSet(Fields.KEYCONT, defaultContinents);
@@ -132,7 +124,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
         return listOfCountries;
     }
 
-    private LatLng getCoordinatesByName(String countryName){
+    private LatLng getCoordinatesByName(String countryName) {
 
         DbHandler dbHandler = new DbHandler(this);
 
@@ -173,10 +165,13 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
         seekBarZoom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
                 if (map != null){
+<<<<<<< HEAD
 
                     float zoomFactor = progress * Fields.FacteurZome + Fields.DebutZoom;
+=======
+                    float zoomFactor = progress * Fields.ZOOM_FACTOR + Fields.START_ZOOM;
+>>>>>>> 481bac569f19c132974042c01c3a816fdeb152e7
 
                     if (progress > prevProgress)
                         map.animateCamera(CameraUpdateFactory.zoomTo(zoomFactor));
@@ -186,19 +181,15 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
                 else
                     seekBar.setProgress(1);
 
-
-
                 prevProgress = progress;
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
 
@@ -215,7 +206,6 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
         map = googleMap;
 
         try {
@@ -237,7 +227,6 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
     private GoogleMap.OnMapClickListener mapClickListener = new GoogleMap.OnMapClickListener() {
         @Override
         public void onMapClick(LatLng latLng) {
-
             if (!skipped){
                 try {
 
@@ -363,8 +352,13 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
 
         alertDialogBuilder.create().show();
     }
+<<<<<<< HEAD
                                             // fonction pour la fin du jeu.
     private void gameIsOver(){
+=======
+
+    private void gameIsOver() {
+>>>>>>> 481bac569f19c132974042c01c3a816fdeb152e7
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 

@@ -1,10 +1,10 @@
-Map Quiz is an Android application to test geographical knowledge. Users's goal is to find countries all around the globe.
+Map Quiz is an Android application that test geographical knowledge. Users's goal is to find countries all around the globe.
 
 User can choose which continents should be included in the game and select difficulty level.
 
 Play Store link: https://play.google.com/store/apps/details?id=com.bochenchleba.mapquiz
 
-Video presentation: https://youtu.be/lhwaOzNWlww
+Video presentation: https://www.youtube.com/watch?v=VrWZe_1k1sQ
 
 Application is using Google Maps API, which requires internet connection.
 

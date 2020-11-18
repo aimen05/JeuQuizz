@@ -24,10 +24,8 @@ public class GetCountriesTask extends AsyncTask<GetCountriesTask.TaskParams, Voi
         this.BDD = BDD;
     }
 
-
     @Override
     protected List<String> doInBackground(TaskParams... parameters) {
-
         List<String> result = new ArrayList<>();
 
         switch (parameters[0].taskId){
@@ -47,9 +45,7 @@ public class GetCountriesTask extends AsyncTask<GetCountriesTask.TaskParams, Voi
     }
 
     protected void onPostExecute(List<String> result) {
-
     }
-
 
     public static class TaskParams {
         int taskId;
@@ -63,5 +59,4 @@ public class GetCountriesTask extends AsyncTask<GetCountriesTask.TaskParams, Voi
         }
 
     }
-
 }

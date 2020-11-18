@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/MapQuiz.iml" filepath="$PROJECT_DIR$/MapQuiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/MapQuiz.iml" filepath="$PROJECT_DIR$/MapQuiz.iml" group="MapQuiz" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MapQuiz/app" />
+>>>>>>> 481bac569f19c132974042c01c3a816fdeb152e7
     </modules>
   </component>
 </project>

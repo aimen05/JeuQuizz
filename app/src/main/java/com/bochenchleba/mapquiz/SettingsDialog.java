@@ -21,8 +21,7 @@ import java.util.Set;
 
 
 
-public class SettingsDialog extends DialogFragment{
-
+public class SettingsDialog extends DialogFragment {
     SharedPreferences prefs;
     CheckBox chkAF,chkAS,chkEU,chkSA,chkNA,chkOT;
     RadioGroup radioGroup;
@@ -34,7 +33,12 @@ public class SettingsDialog extends DialogFragment{
     SettingsListener callback;
 
 
+<<<<<<< HEAD
     public SettingsDialog(){ }
+=======
+    public SettingsDialog() {
+    }
+>>>>>>> 481bac569f19c132974042c01c3a816fdeb152e7
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class SettingsDialog extends DialogFragment{
         return view;
     }
 
+<<<<<<< HEAD
     private void findViews(View view){
 
         chkAF = view.findViewById(R.id.afchb);
@@ -57,6 +62,15 @@ public class SettingsDialog extends DialogFragment{
         chkSA = view.findViewById(R.id.sachp);
         chkNA = view.findViewById(R.id.nachp);
         chkOT = view.findViewById(R.id.ochb);
+=======
+    private void findViews(View view) {
+        chkAF = view.findViewById(R.id.africaChkBox);
+        chkAS = view.findViewById(R.id.asiaChkBox);
+        chkEU = view.findViewById(R.id.europaChkBox);
+        chkSA = view.findViewById(R.id.southAmericaChkBox);
+        chkNA = view.findViewById(R.id.northAmericaChkBox);
+        chkOT = view.findViewById(R.id.otherChkBox);
+>>>>>>> 481bac569f19c132974042c01c3a816fdeb152e7
 
         radioGroup = view.findViewById(R.id.radio_group);
 
@@ -69,7 +83,7 @@ public class SettingsDialog extends DialogFragment{
         prefs = getActivity().getPreferences(Context.MODE_PRIVATE);
     }
 
-    private void setCurrentSettings(){
+    private void setCurrentSettings() {
 
         defaultContinents = new HashSet<>(Arrays.asList("AF", "AS", "EU", "OTHER", "SA", "US"));
         selectedContinents = prefs.getStringSet(Fields.KEYCONT, defaultContinents);
@@ -160,6 +174,6 @@ public class SettingsDialog extends DialogFragment{
     };
 
     public interface SettingsListener {
-        void dataSaved ();
+        void dataSaved();
     }
 }
