@@ -29,7 +29,7 @@
         >
 
         <CheckBox
-            android:id="@+id/africaChkBox"
+            android:id="@+id/afchb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -42,7 +42,7 @@
             android:text="@string/continent_africa" />
 
         <CheckBox
-            android:id="@+id/asiaChkBox"
+            android:id="@+id/aschb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -55,7 +55,7 @@
             android:text="@string/continent_asia" />
 
         <CheckBox
-            android:id="@+id/europaChkBox"
+            android:id="@+id/euchp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -69,7 +69,7 @@
             android:text="@string/continent_europa" />
 
         <CheckBox
-            android:id="@+id/southAmericaChkBox"
+            android:id="@+id/sachp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -83,7 +83,7 @@
             android:text="@string/continent_s_america" />
 
         <CheckBox
-            android:id="@+id/northAmericaChkBox"
+            android:id="@+id/nachp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -97,7 +97,7 @@
             android:text="@string/continent_n_america" />
 
         <CheckBox
-            android:id="@+id/otherChkBox"
+            android:id="@+id/ochb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -135,7 +135,7 @@
         >
 
         <RadioButton
-            android:id="@+id/easy_radio"
+            android:id="@+id/facileradio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/diff_easy"
@@ -147,7 +147,7 @@
             />
 
         <RadioButton
-            android:id="@+id/medium_radio"
+            android:id="@+id/moyenradio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/diff_medium"
@@ -159,7 +159,7 @@
             />
 
         <RadioButton
-            android:id="@+id/hard_radio"
+            android:id="@+id/difficileradio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/diff_hard"
@@ -174,7 +174,7 @@
 
 
     <Button
-        android:id="@+id/settings_save_btn"
+        android:id="@+id/saveboutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 

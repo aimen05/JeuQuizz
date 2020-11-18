@@ -111,13 +111,13 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
     private List<String> getListOfRandomCountries(){
 
         Set<String> defaultContinents = new HashSet<>(Arrays.asList("AF", "AS", "EU", "OTHER", "SA", "US"));
-        Set<String> selectedContinents = prefs.getStringSet(Fields.PREFS_KEY_CONTINENTS, defaultContinents);
-        String selectedDifficulty = prefs.getString(Fields.PREFS_KEY_DIFFICULTY, "2");
+        Set<String> selectedContinents = prefs.getStringSet(Fields.KEYCONT, defaultContinents);
+        String selectedDifficulty = prefs.getString(Fields.KEYDIFF, "2");
 
         DbHandler dbHandler = new DbHandler(this);
 
         GetCountriesTask.TaskParams params = new GetCountriesTask.TaskParams(
-                Fields.TASK_GET_MATCHING_COUNTRIES, selectedContinents, selectedDifficulty);
+                Fields.TACHELIERCPAYS, selectedContinents, selectedDifficulty);
 
         List<String> listOfCountries = new ArrayList<>();
 
@@ -137,7 +137,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
         DbHandler dbHandler = new DbHandler(this);
 
         GetCountriesTask.TaskParams params = new GetCountriesTask.TaskParams(
-                Fields.TASK_GET_COORDINATES, null, countryName);
+                Fields.TACHESCORDINATIONS, null, countryName);
 
         try{
             List<String> coordinates = new GetCountriesTask(dbHandler).execute(params).get();
@@ -176,7 +176,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
 
                 if (map != null){
 
-                    float zoomFactor = progress * Fields.ZOOM_FACTOR + Fields.START_ZOOM;
+                    float zoomFactor = progress * Fields.FacteurZome + Fields.DebutZoom;
 
                     if (progress > prevProgress)
                         map.animateCamera(CameraUpdateFactory.zoomTo(zoomFactor));
@@ -230,7 +230,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
             Log.e("tag", "Can't find style. Error: ", e);
         }
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(Fields.START_LOCATION, Fields.START_ZOOM));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(Fields.Debutlocation, Fields.DebutZoom));
         map.setOnMapClickListener(mapClickListener);
     }
 
@@ -257,7 +257,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
                                 Toast.LENGTH_SHORT).show();
 
                         map.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                Fields.START_LOCATION, Fields.START_ZOOM));
+                                Fields.Debutlocation, Fields.DebutZoom));
 
                         seekBarZoom.setProgress(1);
 
@@ -320,7 +320,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
                         map.clear();
 
                         map.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                Fields.START_LOCATION, Fields.START_ZOOM));
+                                Fields.Debutlocation, Fields.DebutZoom));
 
                         seekBarZoom.setProgress(1);
                     }
@@ -336,7 +336,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
             });
         }
     };
-
+                        // FON
     @Override
     public void dataSaved() {
 
@@ -363,7 +363,7 @@ public class Main extends FragmentActivity implements OnMapReadyCallback, Settin
 
         alertDialogBuilder.create().show();
     }
-
+                                            // fonction pour la fin du jeu.
     private void gameIsOver(){
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

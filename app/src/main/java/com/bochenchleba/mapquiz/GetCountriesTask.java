@@ -16,12 +16,12 @@ import java.util.Set;
 
 public class GetCountriesTask extends AsyncTask<GetCountriesTask.TaskParams, Void, List<String>> {
 
-    private DbHandler dbHandler;
+    private DbHandler BDD;
 
-    public GetCountriesTask(DbHandler dbHandler) {
+    public GetCountriesTask(DbHandler BDD) {
         super();
 
-        this.dbHandler = dbHandler;
+        this.BDD = BDD;
     }
 
 
@@ -32,14 +32,14 @@ public class GetCountriesTask extends AsyncTask<GetCountriesTask.TaskParams, Voi
 
         switch (parameters[0].taskId){
 
-            case Fields.TASK_GET_MATCHING_COUNTRIES:
+            case Fields.TACHELIERCPAYS:
 
-                result = dbHandler.getCountries(parameters[0].param0, parameters[0].param1);
+                result = BDD.getCountries(parameters[0].param0, parameters[0].param1);
                 break;
 
-            case Fields.TASK_GET_COORDINATES:
+            case Fields.TACHESCORDINATIONS:
 
-                result = dbHandler.getCoordinates(parameters[0].param1);
+                result = BDD.getCoordinates(parameters[0].param1);
                 break;
         }
 

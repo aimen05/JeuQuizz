@@ -1,8 +1,6 @@
 package com.bochenchleba.mapquiz.db;
 
-/**
- * Created by bochenchleba on 23/02/18.
- */
+
 
 public class Record {
 

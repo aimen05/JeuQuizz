@@ -3,36 +3,36 @@
     <string name="app_name">Map Quiz</string>
     <string name="title_activity_main">Map Quiz</string>
 
-    <string name="tv_question">Find %s</string>
+    <string name="tv_question">Trouver %s</string>
     <string name="btn_skip">Skip</string>
-    <string name="btn_skip_next">Next</string>
+    <string name="btn_skip_next">Suivant</string>
     <string name="toast_correct">Correct!</string>
-    <string name="toast_wrong">Wrong. This is %s</string>
+    <string name="toast_wrong">Faux. ce pays est %s</string>
     <string name="toast_no_continents">You have to pick at least one continent</string>
 
     <string name="continents">Continents:</string>
-    <string name="continent_africa">Africa</string>
-    <string name="continent_asia">Asia</string>
-    <string name="continent_europa">Europa</string>
-    <string name="continent_s_america">South America</string>
-    <string name="continent_n_america">North America</string>
-    <string name="continent_other">Other</string>
+    <string name="continent_africa">Afrique</string>
+    <string name="continent_asia">Asie</string>
+    <string name="continent_europa">Europe</string>
+    <string name="continent_s_america">Amérique du Sud </string>
+    <string name="continent_n_america">Amérique du Nord</string>
+    <string name="continent_other">Autres</string>
 
-    <string name="difficulty">Difficulty:</string>
-    <string name="diff_easy">Easy</string>
-    <string name="diff_medium">Medium</string>
-    <string name="diff_hard">Hard</string>
+    <string name="difficulty">Difficulté</string>
+    <string name="diff_easy">Facile</string>
+    <string name="diff_medium">Moyen</string>
+    <string name="diff_hard">Difficile</string>
 
-    <string name="save">Save</string>
-    <string name="toast_saved">Settings Saved</string>
-    <string name="reset_alert_title">Restart ?</string>
-    <string name="reset_alert_msg">Game settings has benn changed.\nDo you wish to restart?</string>
+    <string name="save">Enregistrer votre partie</string>
+    <string name="toast_saved">Régalge enregistré</string>
+    <string name="reset_alert_title">Recommencer ?</string>
+    <string name="reset_alert_msg">es paramètres du jeu ont été modifiés.\nVoulez-vous redémarrer?</string>
 
-    <string name="gameover_alert_title">Finished</string>
-    <string name="gameover_alert_msg">You have found %d out of %d countries\nDo you wish to play again?</string>
+    <string name="gameover_alert_title">Le Jeu est terminé</string>
+    <string name="gameover_alert_msg">Tu as réussi à connaitre  %d de %d pays\n Vous voulez jouez Encore fois?</string>
 
-    <string name="skip_hint">Here it is</string>
+    <string name="skip_hint">Génial bravo</string>
 
-    <string name="alert_positive">Yes</string>
-    <string name="alert_negative">No</string>
+    <string name="alert_positive">Oui</string>
+    <string name="alert_negative">Non</string>
    </resources>

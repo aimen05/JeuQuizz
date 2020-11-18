@@ -15,40 +15,37 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by bochenchleba on 23/02/18.
- */
 
 public class DbHandler extends SQLiteOpenHelper {
 
     Context context;
 
-    private static final int DB_VERSION = 1;
+    private static final int VERSION_BDD = 1;
     private static final String DB_NAME = "database";
-    private static final String TABLE_COUNTRIES = "countries";
+    private static final String TABLE_PAYS = "countries";
 
-    private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "name";
-    private static final String KEY_CONTINENT = "cont";
-    private static final String KEY_DIFFICULTY = "diff";
-    private static final String KEY_LATITUDE = "latitude";
-    private static final String KEY_LONGITUDE = "longitude";
+    private static final String ID = "id";
+    private static final String NOMPAYS = "name";
+    private static final String CONTINENT = "cont";
+    private static final String DIFFICULTE = "diff";
+    private static final String ATTITUDE = "latitude";
+    private static final String LONGITUDE = "longitude";
 
     public DbHandler(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
+        super(context, DB_NAME, null, VERSION_BDD);
         this.context = context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_COUNTRIES + "("
-                + KEY_ID + " INTEGER PRIMARY KEY,"
-                + KEY_NAME + " TEXT,"
-                + KEY_CONTINENT + " TEXT,"
-                + KEY_DIFFICULTY + " INTEGER,"
-                + KEY_LATITUDE + " TEXT,"
-                + KEY_LONGITUDE + " TEXT"
+        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_PAYS + "("
+                + ID + " INTEGER PRIMARY KEY,"
+                + NOMPAYS + " TEXT,"
+                + CONTINENT + " TEXT,"
+                + DIFFICULTE + " INTEGER,"
+                + ATTITUDE + " TEXT,"
+                + LONGITUDE + " TEXT"
                 + ")";
 
         db.execSQL(CREATE_CONTACTS_TABLE);
@@ -62,20 +59,20 @@ public class DbHandler extends SQLiteOpenHelper {
         for (int i=0 ; i < countriesList.length ; i++){
 
             ContentValues values = new ContentValues();
-            values.put(KEY_NAME, countriesList[i]);
-            values.put(KEY_CONTINENT, continentsList[i]);
-            values.put(KEY_DIFFICULTY, difficultiesList[i]);
-            values.put(KEY_LATITUDE, latitudesList[i]);
-            values.put(KEY_LONGITUDE, longitudesList[i]);
+            values.put(NOMPAYS, countriesList[i]);
+            values.put(CONTINENT, continentsList[i]);
+            values.put(DIFFICULTE, difficultiesList[i]);
+            values.put(ATTITUDE, latitudesList[i]);
+            values.put(LONGITUDE, longitudesList[i]);
 
-            db.insert(TABLE_COUNTRIES, null, values);
+            db.insert(TABLE_PAYS, null, values);
         }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_COUNTRIES);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PAYS);
 
         onCreate(db);
     }
@@ -85,13 +82,13 @@ public class DbHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, r.getName());
-        values.put(KEY_CONTINENT, r.getContinent());
-        values.put(KEY_DIFFICULTY, r.getDifficulty());
-        values.put(KEY_LATITUDE, r.getLatitude());
-        values.put(KEY_LONGITUDE, r.getLongitude());
+        values.put(NOMPAYS, r.getName());
+        values.put(CONTINENT, r.getContinent());
+        values.put(DIFFICULTE, r.getDifficulty());
+        values.put(ATTITUDE, r.getLatitude());
+        values.put(LONGITUDE, r.getLongitude());
 
-        db.insert(TABLE_COUNTRIES, null, values);
+        db.insert(TABLE_PAYS, null, values);
         db.close();
     }
 
@@ -99,9 +96,9 @@ public class DbHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(
-                TABLE_COUNTRIES,
-                new String[] { KEY_ID, KEY_NAME, KEY_CONTINENT, KEY_DIFFICULTY, KEY_LATITUDE, KEY_LONGITUDE },
-                KEY_ID + "=?",
+                TABLE_PAYS,
+                new String[] { ID, NOMPAYS, CONTINENT, DIFFICULTE, ATTITUDE, LONGITUDE },
+                ID + "=?",
                 new String[] { String.valueOf(id) },
                 null, null, null, null);
 
@@ -125,9 +122,9 @@ public class DbHandler extends SQLiteOpenHelper {
         for (String continent:continents) {
 
             Cursor cursor = db.query(
-                    TABLE_COUNTRIES,
-                    new String[] { KEY_NAME},
-                    KEY_CONTINENT + " LIKE ? AND " + KEY_DIFFICULTY + " <= ?",
+                    TABLE_PAYS,
+                    new String[] { NOMPAYS},
+                    CONTINENT + " LIKE ? AND " + DIFFICULTE + " <= ?",
                     new String[] {"%"+continent+"%", difficulty},
                     null,null,null,null
             );
@@ -151,9 +148,9 @@ public class DbHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(
-                TABLE_COUNTRIES,
-                new String[] { KEY_LATITUDE, KEY_LONGITUDE},
-                KEY_NAME + "=?",
+                TABLE_PAYS,
+                new String[] { ATTITUDE, LONGITUDE},
+                NOMPAYS + "=?",
                 new String[] {countryName},
                 null,null,null,null
         );
@@ -181,7 +178,7 @@ public class DbHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         List<Record> records = new ArrayList<>();
 
-        String selectQuery = "SELECT  * FROM " + TABLE_COUNTRIES + " ORDER BY " + KEY_CONTINENT;
+        String selectQuery = "SELECT  * FROM " + TABLE_PAYS + " ORDER BY " + CONTINENT;
 
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -210,7 +207,7 @@ public class DbHandler extends SQLiteOpenHelper {
     public int getCount() {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String countQuery = "SELECT  * FROM " + TABLE_COUNTRIES;
+        String countQuery = "SELECT  * FROM " + TABLE_PAYS;
 
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.close();
@@ -222,20 +219,20 @@ public class DbHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, record.getName());
-        values.put(KEY_CONTINENT, record.getContinent());
-        values.put(KEY_DIFFICULTY, record.getDifficulty());
-        values.put(KEY_LATITUDE, record.getLatitude());
-        values.put(KEY_LONGITUDE, record.getLongitude());
+        values.put(NOMPAYS, record.getName());
+        values.put(CONTINENT, record.getContinent());
+        values.put(DIFFICULTE, record.getDifficulty());
+        values.put(ATTITUDE, record.getLatitude());
+        values.put(LONGITUDE, record.getLongitude());
 
-        return db.update(TABLE_COUNTRIES, values, KEY_ID + " = ?",
+        return db.update(TABLE_PAYS, values, ID + " = ?",
                 new String[] { String.valueOf(record.getId()) });
     }
 
     public void delete(Record record) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.delete(TABLE_COUNTRIES, KEY_ID + " = ?",
+        db.delete(TABLE_PAYS, ID + " = ?",
                 new String[] { String.valueOf(record.getId()) });
 
         db.close();

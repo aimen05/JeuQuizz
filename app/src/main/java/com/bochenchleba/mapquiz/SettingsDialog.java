@@ -19,36 +19,22 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by bochenchleba on 12/03/18.
- */
+
 
 public class SettingsDialog extends DialogFragment{
 
     SharedPreferences prefs;
-
-    CheckBox chkAF;
-    CheckBox chkAS;
-    CheckBox chkEU;
-    CheckBox chkSA;
-    CheckBox chkNA;
-    CheckBox chkOT;
-
+    CheckBox chkAF,chkAS,chkEU,chkSA,chkNA,chkOT;
     RadioGroup radioGroup;
-
     GridLayout continentsGridLayout;
-
     Button btnSave;
-
     Set<String> defaultContinents;
     Set<String> selectedContinents;
     String selectedDifficulty;
-
     SettingsListener callback;
 
 
-    public SettingsDialog(){
-    }
+    public SettingsDialog(){ }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,18 +51,18 @@ public class SettingsDialog extends DialogFragment{
 
     private void findViews(View view){
 
-        chkAF = view.findViewById(R.id.africaChkBox);
-        chkAS = view.findViewById(R.id.asiaChkBox);
-        chkEU = view.findViewById(R.id.europaChkBox);
-        chkSA = view.findViewById(R.id.southAmericaChkBox);
-        chkNA = view.findViewById(R.id.northAmericaChkBox);
-        chkOT = view.findViewById(R.id.otherChkBox);
+        chkAF = view.findViewById(R.id.afchb);
+        chkAS = view.findViewById(R.id.aschb);
+        chkEU = view.findViewById(R.id.euchp);
+        chkSA = view.findViewById(R.id.sachp);
+        chkNA = view.findViewById(R.id.nachp);
+        chkOT = view.findViewById(R.id.ochb);
 
         radioGroup = view.findViewById(R.id.radio_group);
 
         continentsGridLayout = view.findViewById(R.id.continents_grid_layout);
 
-        btnSave = view.findViewById(R.id.settings_save_btn);
+        btnSave = view.findViewById(R.id.saveboutton);
 
         callback = (SettingsListener) getActivity();
 
@@ -86,8 +72,8 @@ public class SettingsDialog extends DialogFragment{
     private void setCurrentSettings(){
 
         defaultContinents = new HashSet<>(Arrays.asList("AF", "AS", "EU", "OTHER", "SA", "US"));
-        selectedContinents = prefs.getStringSet(Fields.PREFS_KEY_CONTINENTS, defaultContinents);
-        selectedDifficulty = prefs.getString(Fields.PREFS_KEY_DIFFICULTY, "2");
+        selectedContinents = prefs.getStringSet(Fields.KEYCONT, defaultContinents);
+        selectedDifficulty = prefs.getString(Fields.KEYDIFF, "2");
 
         for (String continent : selectedContinents) {
             switch (continent){
@@ -118,13 +104,13 @@ public class SettingsDialog extends DialogFragment{
         switch (selectedDifficulty){
 
             case "1":
-                radioGroup.check(R.id.easy_radio);
+                radioGroup.check(R.id.facileradio);
                 break;
             case "2":
-                radioGroup.check(R.id.medium_radio);
+                radioGroup.check(R.id.moyenradio);
                 break;
             case "3":
-                radioGroup.check(R.id.hard_radio);
+                radioGroup.check(R.id.difficileradio);
                 break;
             default:
                 break;
@@ -156,8 +142,8 @@ public class SettingsDialog extends DialogFragment{
 
                     SharedPreferences.Editor editor = prefs.edit();
 
-                    editor.putStringSet(Fields.PREFS_KEY_CONTINENTS, continentsToSave);
-                    editor.putString(Fields.PREFS_KEY_DIFFICULTY, difficultyToSave);
+                    editor.putStringSet(Fields.KEYCONT, continentsToSave);
+                    editor.putString(Fields.KEYDIFF, difficultyToSave);
                     editor.apply();
 
                     callback.dataSaved();
